@@ -1,0 +1,15 @@
+{% extends "index/template.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'index' %}">Home</a></li>
+<li><a href="{% url 'about' %}">About</a></li>
+<li class="active"><a href="{% url 'blog' %}">Blog</a></li>
+{% endblock %}
+{% block content %}
+<h2>{{ post.title }}</h2>
+<span class="glyphicon glyphicon-time"></span> Posted on {{ post.just_date }}
+<br /><br />
+<p>{{ post.body }}</p>
+
+{% endblock %}

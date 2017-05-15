@@ -1,0 +1,23 @@
+{% extends "index/template.html" %}
+{% block title %}Blog Posts{% endblock %}
+
+{% block navbar %}
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li class="active"><a href="{% url 'blog' %}">Blog</a></li>
+{% endblock %}
+{% block content %}
+{% for post in posts %}
+<h2><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h2>
+<span class="glyphicon glyphicon-time"></span> {{ post.just_date }}
+<br /><br />
+<p>{{ post.summary }}</p>
+{% endfor %}
+<br />
+{% if page.has_previous %}
+<a href="/{{ page.previous_page_number }}/">Previous Page</a>
+{% endif %}
+{% if page.has_next %}
+<a href="/{{ page.next_page_number }}/">Next Page</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "index/template.html" %}
+{% block title %}About{% endblock %}
+
+{% block navbar %}
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li class="active"><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+{% endblock %}
+{% block content %}
+{{ content }}
+{% endblock %}
