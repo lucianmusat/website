@@ -1,9 +1,10 @@
 from django.db import models
+from tinymce import models as tinymce_models
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now_add=True)
-    body = models.TextField()
+    body = tinymce_models.HTMLField()
     slug = models.SlugField(max_length=40, unique=True)
 
     def __str__(self):

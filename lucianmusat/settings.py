@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'index',
     'about',
     'blog',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+#this is for localhost development, if you are in production enviroment, you will need to remove the STATICFILES_DIRS and define your STATIC_ROOT
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins' : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave,pagebreak",
+    'theme': "advanced",
+
+    'theme_advanced_buttons1' : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect,fullscreen,code,|,preview,image,media",
+    'theme_advanced_buttons2' : "table,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,|,forecolor,backcolor, emotions,|,pagebreak,paste",
+    'theme_advanced_buttons3 ': "",
+    'theme_advanced_toolbar_location' : "top",
+    'theme_advanced_toolbar_align' : "left",
+    'width': '700',
+    'height': '400'
+}
