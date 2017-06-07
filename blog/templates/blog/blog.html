@@ -15,7 +15,7 @@
 {% endfor %}
 <br />
 {% if posts.has_other_pages %}
-<ul class="pagination">
+<ul class="pagination" style="margin-bottom: 100px;">
     {% if posts.has_previous %}
     <li><a href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
     {% else %}

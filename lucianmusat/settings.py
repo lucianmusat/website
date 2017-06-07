@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '397@nf7ut642m2*$*u((2ih&fnl(qa33_!c__@u2h62oz0=h6f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '0.0.0.0', '192.168.0.1', '127.0.0.1', '213.46.144.180']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,11 +123,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = ''
+STATICFILES_DIRS = ('/Users/lucianmusat/Work/website/lucianmusat/static/',)
+
+# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
 #this is for localhost development, if you are in production enviroment, you will need to remove the STATICFILES_DIRS and define your STATIC_ROOT
 TINYMCE_DEFAULT_CONFIG = {
     'plugins' : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave,pagebreak",
