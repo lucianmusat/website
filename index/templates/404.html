@@ -1,0 +1,11 @@
+{% extends "index/template.html" %}
+{% block title %}Lucian Musat - Page not found{% endblock %}
+
+{% block navbar %}
+<li class="active"><a href="{% url 'index' %}">Home</a></li>
+<li><a href="{% url 'about' %}">About</a></li>
+<li><a href="{% url 'blog' %}">Blog</a></li>
+{% endblock %}
+{% block content %}
+Ever feel like you are in the wrong place?
+{% endblock %}
