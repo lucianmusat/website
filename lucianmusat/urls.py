@@ -23,6 +23,6 @@ from about.views import about
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^about/', about, name='about'),
-    url(r'^admin/', admin.site.urls),
+    url(r'^manage/', admin.site.urls),
     url(r'^blog/', include('blog.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

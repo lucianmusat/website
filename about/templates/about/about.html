@@ -7,5 +7,5 @@
                     <li><a href="{% url 'blog' %}">Blog</a></li>
 {% endblock %}
 {% block content %}
-{{ content }}
+{{ content|safe }}
 {% endblock %}
