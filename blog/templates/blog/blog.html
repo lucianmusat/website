@@ -11,7 +11,7 @@
 <h2><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h2>
 <span class="glyphicon glyphicon-time"></span> {{ post.just_date }}
 <br /><br />
-<p>{{ post.summary }}</p>
+<p>{{ post.summary|safe }}</p>
 {% endfor %}
 <br />
 {% if posts.has_other_pages %}
